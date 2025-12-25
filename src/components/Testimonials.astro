@@ -1,39 +1,102 @@
 ---
-
+const testimonials = [
+  {
+    name: "Mark Thompson",
+    role: "Warehouse Owner",
+    location: "Kalamazoo, MI",
+    content:
+      "The difference in our heating bills was immediate. Lake Michigan Spray Foam came in, got the job done in two days, and left the place spotless. Highly recommend for any commercial building.",
+    stars: 5,
+  },
+  {
+    name: "Sarah Jenkins",
+    role: "Farm Manager",
+    location: "South Haven, MI",
+    content:
+      "We were battling condensation issues in our new pole barn. They recommended closed-cell foam, and it's been perfect. No more dripping, and the temperature stays completely stable.",
+    stars: 5,
+  },
+  {
+    name: "David Miller",
+    role: "Project Manager",
+    location: "Benton Harbor, MI",
+    content:
+      "I've worked with a lot of subcontractors, and these guys are among the best. Reliable, professional, and they actually communicate. Will definitely be using them on our next build.",
+    stars: 5,
+  },
+];
 ---
 
-<section
-  class="py-20 bg-gray-900 text-white relative overflow-hidden"
-  id="about"
->
-  <!-- Decorative background elements -->
-  <div
-    class="absolute top-0 left-0 w-64 h-64 bg-brand-blue/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"
-  >
-  </div>
-
-  <div class="max-w-4xl mx-auto px-6 relative z-10 text-center">
-    <div class="mb-12" data-aos="fade-up">
-      <h2 class="text-3xl lg:text-5xl font-bold mb-6">Founded to Fill a Gap</h2>
-      <div class="w-24 h-1 bg-brand-blue mx-auto mb-8"></div>
+<section class="py-20 lg:py-28 bg-gray-50 overflow-hidden" id="testimonials">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+      <span class="text-brand-blue font-bold tracking-wider uppercase text-sm"
+        >Testimonials</span
+      >
+      <h2 class="text-3xl lg:text-5xl font-bold mt-2 mb-6 text-gray-900">
+        Trusted by Locals
+      </h2>
+      <p class="text-xl text-gray-600">
+        Don't just take our word for it. Here's what our neighbors in Southwest
+        Michigan have to say.
+      </p>
     </div>
 
-    <blockquote
-      class="text-xl md:text-2xl leading-relaxed font-light text-gray-300 italic mb-8"
-      data-aos="fade-up"
-      data-aos-delay="100"
-    >
-      "We saw a need for a professional, responsive company in our area, and we
-      decided to fill that gap. We started this company after struggling to find
-      responsive contractors for our own church facilities. We built Lake
-      Michigan Spray Foam to be the partner we couldn't find."
-    </blockquote>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {
+        testimonials.map((testimonial, index) => (
+          <div
+            class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 relative group hover:shadow-md transition-shadow duration-300"
+            data-aos="fade-up"
+            data-aos-delay={index * 100}
+          >
+            <!-- Quote Icon -->
+            <div class="absolute top-6 right-8 text-gray-100 group-hover:text-brand-blue/10 transition-colors duration-300">
+              <svg
+                width="40"
+                height="40"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 7.55228 14.017 7V3H19.017C20.6739 3 22.017 4.34315 22.017 6V15C22.017 16.6569 20.6739 18 19.017 18H16.017V21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 7.55228 5.0166 7V3H10.0166C11.6735 3 13.0166 4.34315 13.0166 6V15C13.0166 16.6569 11.6735 18 10.0166 18H7.0166V21H5.0166Z" />
+              </svg>
+            </div>
 
-    <div data-aos="fade-up" data-aos-delay="200">
-      <h4 class="font-bold text-white text-lg">The Founders</h4>
-      <span class="text-sm text-brand-blue font-bold tracking-widest uppercase"
-        >Lake Michigan Spray Foam</span
-      >
+            <!-- Stars -->
+            <div class="flex gap-1 mb-6 text-yellow-400">
+              {Array.from({ length: testimonial.stars }).map(() => (
+                <svg
+                  class="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              ))}
+            </div>
+
+            <p class="text-gray-600 mb-6 italic leading-relaxed relative z-10">
+              "{testimonial.content}"
+            </p>
+
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 rounded-full bg-brand-blue text-white flex items-center justify-center font-bold text-lg">
+                {testimonial.name.charAt(0)}
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-900 leading-tight">
+                  {testimonial.name}
+                </h4>
+                <p class="text-sm text-gray-500">
+                  {testimonial.role} • {testimonial.location}
+                </p>
+              </div>
+            </div>
+          </div>
+        ))
+      }
     </div>
   </div>
 </section>

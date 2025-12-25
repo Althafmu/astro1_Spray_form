@@ -1,0 +1,87 @@
+---
+const posts = [
+  {
+    title: "5 Signs Your Commercial Roof Needs Replaced",
+    category: "Maintenance",
+    date: "Dec 12, 2024",
+    image:
+      "https://images.unsplash.com/photo-1620626011761-996317b8d101?q=80&w=1000&auto=format&fit=crop",
+  },
+  {
+    title: "Energy Efficiency Benefits of TPO Roofing",
+    category: "Sustainability",
+    date: "Nov 28, 2024",
+    image:
+      "https://images.unsplash.com/photo-1596263576926-778736ac245e?q=80&w=1000&auto=format&fit=crop",
+  },
+  {
+    title: "Preparing Your Roof for Winter Storms",
+    category: "Weather Safety",
+    date: "Nov 15, 2024",
+    image:
+      "https://images.unsplash.com/photo-1543355520-25e839210748?q=80&w=1000&auto=format&fit=crop",
+  },
+];
+---
+
+<section class="py-20 lg:py-28 bg-white" id="blog">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex justify-between items-end mb-12">
+      <div data-aos="fade-right">
+        <span
+          class="text-trukote-red font-bold tracking-wider uppercase text-sm"
+          >Insights</span
+        >
+        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mt-2">
+          featured News & Insights
+        </h2>
+      </div>
+      <a
+        href="/blog"
+        class="hidden md:flex items-center text-gray-900 font-bold hover:text-trukote-red transition-colors"
+        data-aos="fade-left"
+      >
+        View All Articles
+        <svg
+          class="w-5 h-5 ml-2"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          ><path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg
+        >
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {
+        posts.map((post, i) => (
+          <article
+            class="group cursor-pointer"
+            data-aos="fade-up"
+            data-aos-delay={i * 100}
+          >
+            <div class="overflow-hidden rounded-xl mb-4 aspect-[4/3]">
+              <img
+                src={post.image}
+                alt={post.title}
+                class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+              />
+            </div>
+            <div class="flex items-center gap-3 text-sm text-gray-500 mb-2">
+              <span class="text-trukote-gold font-bold">{post.category}</span>
+              <span>•</span>
+              <span>{post.date}</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 group-hover:text-trukote-red transition-colors leading-tight">
+              {post.title}
+            </h3>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

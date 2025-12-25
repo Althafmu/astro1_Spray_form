@@ -1,0 +1,56 @@
+---
+import "../styles/global.css";
+import "aos/dist/aos.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Lake Michigan Spray Foam | Commercial & Agricultural Insulation",
+  description = "Professional spray foam insulation for Southwest Michigan. Specializing in commercial, pole barns, and roof coatings. SPFA Certified.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Google Fonts: Manrope -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>{title}</title>
+  </head>
+  <body>
+    <a
+      href="#main-content"
+      class="opacity-0 absolute top-0 left-0 z-[100] px-4 py-2 bg-brand-blue text-white font-bold transition-opacity focus:opacity-100 focus:static"
+    >
+      Skip to main content
+    </a>
+    <slot />
+
+    <script>
+      import AOS from "aos";
+
+      // Initialize AOS
+      AOS.init({
+        duration: 800,
+        easing: "ease-out-cubic",
+        once: true,
+        offset: 50,
+      });
+    </script>
+  </body>
+</html>

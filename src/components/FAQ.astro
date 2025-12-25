@@ -1,0 +1,92 @@
+---
+const faqs = [
+  {
+    question: "What types of commercial roofing systems do you install?",
+    answer:
+      "We specialize in TPO, EPDM, PVC, and Modified Bitumen systems. We also offer metal roofing and fluid-applied restoration systems suitable for various commercial needs.",
+  },
+  {
+    question: "Do you offer emergency roofing services?",
+    answer:
+      "Yes, we have 24/7 emergency response teams ready to handle storm damage or sudden leaks to minimize disruption to your business.",
+  },
+  {
+    question: "How long does a commercial roof inspection take?",
+    answer:
+      "A standard visual inspection takes 1-2 hours depending on the size of the facility. A detailed diagnostic inspection including core cuts or infrared scans may take longer.",
+  },
+  {
+    question: "What areas do you serve?",
+    answer:
+      "We serve commercial clients nationwide with localized teams in major metropolitan areas to ensure prompt service.",
+  },
+];
+---
+
+<section class="py-20 lg:py-28 bg-gray-50" id="faq">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="text-center mb-16" data-aos="fade-up">
+      <h2 class="text-3xl lg:text-5xl font-bold mb-4">
+        Frequently Asked <span class="text-trukote-red">Questions</span>
+      </h2>
+      <p class="text-gray-600">
+        Get answers to common questions about commercial roofing maintenance and
+        installation.
+      </p>
+    </div>
+
+    <div class="space-y-4">
+      {
+        faqs.map((faq, i) => (
+          <div
+            class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay={i * 100}
+          >
+            <details class="group">
+              <summary class="flex justify-between items-center font-bold text-lg cursor-pointer list-none p-6 text-gray-900 hover:text-trukote-red transition-colors">
+                {faq.question}
+                <span class="transition group-open:rotate-180">
+                  <svg
+                    fill="none"
+                    height="24"
+                    shape-rendering="geometricPrecision"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <path d="M6 9l6 6 6-6" />
+                  </svg>
+                </span>
+              </summary>
+              <div class="text-gray-600 px-6 pb-6 leading-relaxed animate-fade-in-down">
+                {faq.answer}
+              </div>
+            </details>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Slight animation for the details open */
+  details[open] summary ~ * {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

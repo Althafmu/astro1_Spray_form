@@ -1,0 +1,107 @@
+---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
+interface Props {
+  title: string;
+  description: string;
+  image: ImageMetadata;
+  reversed?: boolean;
+  features?: string[];
+}
+
+const {
+  title,
+  description,
+  image,
+  reversed = false,
+  features = [],
+} = Astro.props;
+---
+
+<section class="py-20 lg:py-28 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6">
+    <div
+      class={`flex flex-col lg:flex-row items-center gap-12 lg:gap-20 ${reversed ? "lg:flex-row-reverse" : ""}`}
+    >
+      <!-- Image Side -->
+      <div
+        class="w-full lg:w-1/2"
+        data-aos={reversed ? "fade-left" : "fade-right"}
+      >
+        <div class="relative rounded-2xl overflow-hidden shadow-2xl group">
+          <div
+            class="absolute inset-0 bg-brand-blue/10 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none"
+          >
+          </div>
+          <Image
+            src={image}
+            alt={title}
+            class="w-full aspect-video lg:aspect-auto lg:h-[500px] object-cover transform group-hover:scale-105 transition-transform duration-700"
+          />
+        </div>
+      </div>
+
+      <!-- Content Side -->
+      <div
+        class="w-full lg:w-1/2"
+        data-aos={reversed ? "fade-right" : "fade-left"}
+      >
+        <span
+          class="inline-block py-1 px-3 rounded-full bg-blue-50 text-brand-blue font-bold text-xs tracking-wider uppercase mb-4"
+        >
+          Our Services
+        </span>
+        <h2
+          class="text-3xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight"
+        >
+          {title}
+        </h2>
+        <p class="text-lg text-gray-600 mb-8 leading-relaxed">{description}</p>
+
+        {
+          features.length > 0 && (
+            <ul class="space-y-4 mb-8">
+              {features.map((feature) => (
+                <li class="flex items-start gap-3 text-gray-700 font-medium">
+                  <svg
+                    class="w-6 h-6 text-brand-blue flex-shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  {feature}
+                </li>
+              ))}
+            </ul>
+          )
+        }
+
+        <a
+          href="/contact"
+          class="inline-flex items-center text-brand-blue font-bold hover:gap-2 transition-all active:scale-[0.96] origin-left"
+        >
+          Get Pricing
+          <svg
+            class="w-5 h-5 ml-2"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            ><path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg
+          >
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

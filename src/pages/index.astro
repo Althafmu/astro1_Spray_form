@@ -1,0 +1,165 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import StatsCards from "../components/StatsCards.astro";
+import ServiceSection from "../components/ServiceSection.astro";
+import Projects from "../components/Projects.astro"; // Replaces BlogSection
+import Contractors from "../components/Contractors.astro"; // "For General Contractors"
+import Footer from "../components/Footer.astro";
+
+// Using FAQ as "Services Details" or optional extra info?
+// User didn't prioritize FAQ, but we can keep it hidden or remove it.
+// Let's remove it to keep it clean as per "Visual Style: Clean look" and user didn't ask for it.
+
+// Service Data
+import commercialImage from "../assets/hero-spray-foam.png";
+import poleBarnImage from "../assets/pole-barn.png";
+import roofCoatingImage from "../assets/roof-coating.png";
+
+const services = [
+  {
+    title: "Commercial Insulation",
+    description:
+      "We provide both Closed-cell (R7.5/inch) and Open-cell foam solutions for warehouses, factories, and offices. Our high-performance Accufoam helps reduce energy costs and creates a comfortable working environment year-round.",
+    image: commercialImage,
+    features: [
+      "Accufoam Technology",
+      "Ideal for Warehouses & Factories",
+      "Significant Energy Savings",
+    ],
+    reversed: false,
+  },
+  {
+    title: "Pole Barns & Agricultural",
+    description:
+      "Our specialty. We help farmers and property owners transform open agricultural buildings into energy-efficient, condensation-free workspaces. Whether it's a shop, horse barn, or silo, we have the expertise.",
+    image: poleBarnImage,
+    features: [
+      "Condensation Control",
+      "Thermal Barrier",
+      "Improved Livestock Comfort",
+    ],
+    reversed: true,
+  },
+  {
+    title: "Roof Coatings & Fireproofing",
+    description:
+      "Extend the life of your commercial roof with our SPFA Certified spray foam roofing and coating systems. We also apply thermal barriers (fireproofing) to meet IECC building codes and safety regulations.",
+    image: roofCoatingImage,
+    features: [
+      "SPFA Certified",
+      "Coatings for Life Extension",
+      "Code Compliant Fireproofing",
+    ],
+    reversed: false,
+  },
+];
+---
+
+<Layout title="Lake Michigan Spray Foam | Commercial & Agricultural Insulation">
+  <Header />
+
+  <main id="main-content">
+    <Hero />
+    <StatsCards />
+
+    <div id="services">
+      {services.map((service) => <ServiceSection {...service} />)}
+    </div>
+
+    <Contractors />
+
+    <Projects />
+
+    <!-- About / Mission Summary -->
+    <section class="py-20 bg-gray-900 text-white relative overflow-hidden">
+      <div
+        class="absolute top-0 left-0 w-64 h-64 bg-brand-blue/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"
+      >
+      </div>
+
+      <div class="max-w-4xl mx-auto px-6 relative z-10 text-center">
+        <h2 class="text-3xl lg:text-5xl font-bold mb-6" data-aos="fade-up">
+          Founded to Fill a Gap
+        </h2>
+        <div class="w-24 h-1 bg-brand-blue mx-auto mb-8"></div>
+
+        <p
+          class="text-xl md:text-2xl leading-relaxed font-light text-gray-300 mb-10"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          "We saw a need for a professional, responsive company in our area, and
+          we decided to fill that gap. We built Lake Michigan Spray Foam to be
+          the partner we couldn't find."
+        </p>
+
+        <div data-aos="fade-up" data-aos-delay="200">
+          <a
+            href="/about"
+            class="inline-flex items-center text-white border-b-2 border-brand-blue pb-1 hover:text-brand-blue transition-colors font-bold text-lg group"
+          >
+            Read Our Full Story
+            <svg
+              class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section
+      class="py-20 bg-brand-blue text-center relative overflow-hidden"
+      id="contact"
+    >
+      <div class="absolute inset-0 bg-black/10"></div>
+      <div class="relative z-10 max-w-4xl mx-auto px-6">
+        <h2
+          class="text-3xl lg:text-5xl font-bold text-white mb-6"
+          data-aos="zoom-in"
+        >
+          Ready to Get Started?
+        </h2>
+        <p
+          class="text-xl text-white/90 mb-8 max-w-2xl mx-auto"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          We offer free site visits and quick estimates. Let's make your
+          building better.
+        </p>
+        <div
+          class="flex flex-col sm:flex-row justify-center gap-4"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <a
+            href="/contact"
+            class="inline-block px-8 py-3.5 bg-white text-brand-blue font-bold rounded-full hover:bg-gray-100 transition-colors shadow-lg"
+          >
+            Request a Quote
+          </a>
+          <a
+            href="tel:269-876-0598"
+            class="inline-block px-8 py-3.5 border-2 border-white text-white font-bold rounded-full hover:bg-white/10 transition-colors shadow-lg"
+          >
+            Call 269-876-0598
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

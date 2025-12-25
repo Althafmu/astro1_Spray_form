@@ -1,0 +1,269 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { Image } from "astro:assets";
+import sprayFoamImage from "../assets/hero-spray-foam.png";
+import poleBarnImage from "../assets/pole-barn.png";
+---
+
+<Layout title="Services | Lake Michigan Spray Foam">
+  <Header />
+
+  <main id="main-content">
+    <!-- Header -->
+    <section
+      class="bg-brand-dark text-white pt-32 pb-24 relative overflow-hidden"
+    >
+      <div class="absolute inset-0 z-0 opacity-20">
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-brand-blue to-black mix-blend-multiply"
+        >
+        </div>
+      </div>
+      <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6" data-aos="zoom-in">
+          Our Services
+        </h1>
+        <p
+          class="text-xl text-gray-300 max-w-3xl mx-auto"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          Professional commercial and agricultural insulation solutions. SPFA
+          Certified and ensuring elite performance with every spray.
+        </p>
+      </div>
+    </section>
+
+    <!-- Services List -->
+    <div class="bg-gray-50">
+      <!-- Spray Foam (Open/Closed) -->
+      <section
+        class="py-20 max-w-7xl mx-auto px-6 overflow-hidden"
+        id="spray-foam"
+      >
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div data-aos="fade-right">
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-6">
+              Commercial Spray Foam
+            </h2>
+            <p class="text-lg text-gray-600 mb-6">
+              We specialize in Accufoam® technology, providing industry-leading
+              R-values and structural integrity.
+            </p>
+
+            <div class="space-y-6">
+              <div
+                class="bg-white p-6 rounded-xl shadow-sm border border-gray-100"
+              >
+                <h3 class="text-xl font-bold text-brand-blue mb-2">
+                  Closed-Cell Foam
+                </h3>
+                <p class="text-gray-600 mb-3">
+                  <strong>R-7.5 per inch.</strong> The gold standard for structural
+                  strength, moisture barriers, and maximum thermal resistance. Ideal
+                  for pole barns, metal buildings, and exterior walls.
+                </p>
+                <ul class="text-sm space-y-2 text-gray-500">
+                  <li class="flex items-center gap-2">
+                    <span class="text-brand-blue">✓</span> Adds structural strength
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span class="text-brand-blue">✓</span> Acts as a vapor barrier
+                  </li>
+                </ul>
+              </div>
+
+              <div
+                class="bg-white p-6 rounded-xl shadow-sm border border-gray-100"
+              >
+                <h3 class="text-xl font-bold text-brand-blue mb-2">
+                  Open-Cell Foam
+                </h3>
+                <p class="text-gray-600 mb-3">
+                  Excellent expandability for hard-to-reach areas. Great sound
+                  dampening qualities and cost-effective insulation for interior
+                  walls and confident ceilings.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl"
+            data-aos="fade-left"
+          >
+            <Image
+              src={sprayFoamImage}
+              alt="Spray foam application"
+              class="absolute inset-0 w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Pole Barns / Ag -->
+      <section class="py-20 bg-white overflow-hidden" id="pole-barns">
+        <div class="max-w-7xl mx-auto px-6">
+          <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div
+              class="order-2 md:order-1 relative h-[500px] rounded-2xl overflow-hidden shadow-2xl"
+              data-aos="fade-right"
+            >
+              <Image
+                src={poleBarnImage}
+                alt="Agricultural barn interior"
+                class="absolute inset-0 w-full h-full object-cover"
+              />
+            </div>
+            <div class="order-1 md:order-2" data-aos="fade-left">
+              <div
+                class="inline-block px-4 py-1 bg-brand-blue/10 text-brand-blue rounded-full text-sm font-bold mb-4"
+              >
+                Our Specialty
+              </div>
+              <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-6">
+                Pole Barns & Agricultural
+              </h2>
+              <p class="text-lg text-gray-600 mb-6">
+                Transform cold, damp metal buildings into comfortable, efficient
+                workspaces. We understand the unique needs of agricultural
+                structures in Michigan.
+              </p>
+
+              <ul class="space-y-4 mb-8">
+                <li class="flex items-start gap-3">
+                  <div
+                    class="w-6 h-6 rounded-full bg-brand-blue text-white flex items-center justify-center shrink-0 mt-1"
+                  >
+                    1
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-brand-dark">
+                      Eliminate Condensation
+                    </h4>
+                    <p class="text-sm text-gray-600">
+                      Stop the "sweating ceiling" effect that drips on equipment
+                      and livestock.
+                    </p>
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <div
+                    class="w-6 h-6 rounded-full bg-brand-blue text-white flex items-center justify-center shrink-0 mt-1"
+                  >
+                    2
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-brand-dark">Climate Control</h4>
+                    <p class="text-sm text-gray-600">
+                      Keep heated shops warm in winter and cool in summer with
+                      minimal energy cost.
+                    </p>
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <div
+                    class="w-6 h-6 rounded-full bg-brand-blue text-white flex items-center justify-center shrink-0 mt-1"
+                  >
+                    3
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-brand-dark">Pest Reduction</h4>
+                    <p class="text-sm text-gray-600">
+                      Seal gaps where rodents and birds enter.
+                    </p>
+                  </div>
+                </li>
+              </ul>
+
+              <a
+                href="/contact"
+                class="text-brand-blue font-bold hover:underline flex items-center gap-2"
+              >
+                Get a Quote for Your Barn <span>→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Roof Coatings & Fireproofing -->
+      <section class="py-20 max-w-7xl mx-auto px-6" id="roofing">
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="col-span-3 text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-4">
+              Specialized Applications
+            </h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+              Beyond standard insulation, we offer critical protection services
+              for commercials buildings.
+            </p>
+          </div>
+
+          <!-- Card 1 -->
+          <div
+            class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-brand-blue"
+            data-aos="fade-up"
+          >
+            <h3 class="text-2xl font-bold text-brand-dark mb-4">
+              Roof Coatings
+            </h3>
+            <p class="text-gray-600 mb-6">
+              Extend the life of your commercial flat roof. Our SPFA certified
+              coatings create a seamless, waterproof barrier that reflects UV
+              rays and stops leaks.
+            </p>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-brand-blue"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <h3 class="text-2xl font-bold text-brand-dark mb-4">
+              Fireproofing
+            </h3>
+            <p class="text-gray-600 mb-6">
+              Application of thermal barriers and ignition barriers to meet IECC
+              building codes. Essential for exposed foam in occupied spaces.
+            </p>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-brand-blue"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <h3 class="text-2xl font-bold text-brand-dark mb-4">Air Sealing</h3>
+            <p class="text-gray-600 mb-6">
+              Draft reduction and energy efficiency upgrades. We locate and seal
+              leaks that fiberglass simply can't stop.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="py-20 bg-brand-blue text-white text-center">
+        <div class="max-w-4xl mx-auto px-6">
+          <h2 class="text-3xl font-bold mb-6">Not sure what you need?</h2>
+          <p class="text-xl opacity-90 mb-8">
+            We offer free site visits and we'll help you determine the best
+            solution for your specific building.
+          </p>
+          <a
+            href="/contact"
+            class="inline-block bg-white text-brand-blue px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-colors"
+          >
+            Schedule Free Site Visit
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

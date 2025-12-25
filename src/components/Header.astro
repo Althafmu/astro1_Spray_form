@@ -1,0 +1,124 @@
+---
+import { Menu } from "lucide-react";
+---
+
+<header
+  class="fixed top-0 left-0 w-full z-50 transition-all duration-300 glass-nav no-select"
+  id="main-header"
+>
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="/" class="text-2xl font-bold tracking-tight text-gray-900 group">
+      LAKE MICHIGAN<span
+        class="text-brand-blue block text-sm font-extrabold tracking-widest"
+        >SPRAY FOAM</span
+      >
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden lg:flex items-center space-x-8">
+      <a
+        href="/"
+        class="text-sm font-semibold text-gray-800 hover:text-brand-blue transition-colors py-2"
+        >Home</a
+      >
+      <a
+        href="/about"
+        class="text-sm font-semibold text-gray-800 hover:text-brand-blue transition-colors py-2"
+        >About Us</a
+      >
+      <a
+        href="/services"
+        class="text-sm font-semibold text-gray-800 hover:text-brand-blue transition-colors py-2"
+        >Services</a
+      >
+      <a
+        href="/#projects"
+        class="text-sm font-semibold text-gray-800 hover:text-brand-blue transition-colors py-2"
+        >Projects</a
+      >
+      <a
+        href="/#contractors"
+        class="text-sm font-semibold text-gray-800 hover:text-brand-blue transition-colors py-2"
+        >For Contractors</a
+      >
+    </nav>
+
+    <!-- CTA & Mobile Menu Toggle -->
+    <div class="flex items-center gap-4">
+      <a
+        href="/contact"
+        class="hidden sm:inline-flex items-center justify-center px-6 py-2.5 text-sm font-bold text-white bg-brand-blue rounded-full hover:bg-brand-blue-dark transition-all duration-200 active:scale-[0.96] shadow-lg shadow-blue-900/10"
+      >
+        Schedule Site Visit
+      </a>
+
+      <button
+        class="lg:hidden p-2 text-gray-800"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+        id="mobile-menu-btn"
+      >
+        <Menu className="w-6 h-6" />
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div
+    class="lg:hidden absolute top-full left-0 w-full bg-white border-b border-gray-100 shadow-xl transition-all duration-300 ease-out origin-top opacity-0 invisible -translate-y-2"
+    id="mobile-menu"
+    role="region"
+    aria-labelledby="mobile-menu-btn"
+  >
+    <div class="flex flex-col p-6 space-y-4">
+      <a
+        href="/"
+        class="text-lg font-medium text-gray-900 hover:text-brand-blue active:text-brand-blue py-2"
+        >Home</a
+      >
+      <a
+        href="/about"
+        class="text-lg font-medium text-gray-900 hover:text-brand-blue active:text-brand-blue py-2"
+        >About Us</a
+      >
+      <a
+        href="/services"
+        class="text-lg font-medium text-gray-900 hover:text-brand-blue active:text-brand-blue py-2"
+        >Services</a
+      >
+      <a
+        href="/#projects"
+        class="text-lg font-medium text-gray-900 hover:text-brand-blue active:text-brand-blue py-2"
+        >Projects</a
+      >
+      <a
+        href="/#contractors"
+        class="text-lg font-medium text-gray-900 hover:text-brand-blue active:text-brand-blue py-2"
+        >For Contractors</a
+      >
+      <a href="/contact" class="text-lg font-bold text-brand-blue py-2"
+        >Schedule Visit</a
+      >
+    </div>
+  </div>
+</header>
+
+<script>
+  // Mobile menu toggle
+  const btn = document.getElementById("mobile-menu-btn");
+  const menu = document.getElementById("mobile-menu");
+
+  btn?.addEventListener("click", () => {
+    const isExpanded = btn.getAttribute("aria-expanded") === "true";
+    btn.setAttribute("aria-expanded", (!isExpanded).toString());
+
+    // Toggle transition classes
+    menu?.classList.toggle("opacity-0");
+    menu?.classList.toggle("invisible");
+    menu?.classList.toggle("-translate-y-2");
+    menu?.classList.toggle("opacity-100");
+    menu?.classList.toggle("visible");
+    menu?.classList.toggle("translate-y-0");
+  });
+</script>

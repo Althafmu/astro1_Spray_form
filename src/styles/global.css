@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand Colors: Blue, White, Black, Gray */
+  /* "Similar to Detroit Lions but not Honolulu Blue" -> Deep Professional Blue */
+  --color-brand-blue: #004C8C; 
+  --color-brand-blue-dark: #003865;
+  --color-brand-silver: #B5B5B5;
+  --color-brand-dark: #1a1a1a;
+  
+  --color-primary-bg: #FFFFFF;
+  --color-primary-text: #1a1a1a;
+  
+  --font-manrope: 'Manrope', sans-serif;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-manrope);
+    background-color: var(--color-primary-bg);
+    color: var(--color-primary-text);
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    text-rendering: optimizeLegibility;
+    -webkit-text-size-adjust: 100%;
+    overflow-x: hidden;
+  }
+  
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  ::selection {
+    background: var(--color-brand-blue);
+    color: white;
+  }
+}
+
+/* Custom Utilities */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.text-brand-blue {
+    color: var(--color-brand-blue);
+}
+
+.bg-brand-blue {
+    background-color: var(--color-brand-blue);
+}
+
+.no-select {
+  user-select: none;
+  -webkit-user-select: none;
+}

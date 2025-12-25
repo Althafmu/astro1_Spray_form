@@ -1,0 +1,46 @@
+---
+const stats = [
+  {
+    number: "01",
+    title: "We Work Faithfully",
+    description:
+      "Founded on Biblical principles. We do what we say we'll do, showing up on time and working with integrity.",
+  },
+  {
+    number: "02",
+    title: "Stewardship Focus",
+    description:
+      "'Leave it better than we found it.' Our cleanup process is rigorous so your facility is ready for use immediately.",
+  },
+  {
+    number: "03",
+    title: "American Made",
+    description:
+      "We use high-performance Accufoam and Green fiber cellulose products, supporting American manufacturing.",
+  },
+];
+---
+
+<section
+  class="max-w-7xl mx-auto px-6 py-12 -mt-20 relative z-30 overflow-hidden"
+>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    {
+      stats.map((stat, index) => (
+        <div
+          class="bg-white p-8 rounded-xl shadow-xl hover:-translate-y-2 transition-transform duration-300 border border-gray-100"
+          data-aos="fade-up"
+          data-aos-delay={index * 100}
+        >
+          <span class="block text-4xl font-bold text-gray-200 mb-4">
+            {stat.number}
+          </span>
+          <h3 class="text-xl font-bold text-brand-blue mb-3">{stat.title}</h3>
+          <p class="text-gray-600 leading-relaxed theme-text-secondary">
+            {stat.description}
+          </p>
+        </div>
+      ))
+    }
+  </div>
+</section>

@@ -1,0 +1,89 @@
+---
+const partners = [
+  "WHL Construction",
+  "McGuires Professional Construction",
+  "Chandler Home Construction",
+  "McNulty Construction",
+  "JL Woodworking",
+  "Pierson Construction",
+  "Roggow Construction",
+];
+---
+
+<section class="py-20 lg:py-28 bg-gray-50 overflow-hidden" id="contractors">
+  <div class="max-w-7xl mx-auto px-6 text-center">
+    <div class="max-w-3xl mx-auto mb-16" data-aos="fade-up">
+      <h2 class="text-3xl lg:text-5xl font-bold mb-6 text-gray-900">
+        The Subcontractor You Don't Have To <span class="text-brand-blue"
+          >Babysit</span
+        >
+      </h2>
+      <p class="text-xl text-gray-600 mb-8">
+        We turn bids around in 1–2 days. We show up when we say we will. We
+        don't cut corners; we seal them.
+      </p>
+      <a
+        href="/contact"
+        class="inline-block px-8 py-3.5 bg-brand-blue text-white font-bold rounded-full hover:bg-brand-blue-dark transition-colors shadow-lg"
+      >
+        Partner With Us
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left mb-20">
+      <div
+        class="bg-white p-8 rounded-xl shadow-sm border border-gray-100"
+        data-aos="fade-up"
+        data-aos-delay="0"
+      >
+        <h3 class="font-bold text-xl mb-4 text-brand-blue">Speed</h3>
+        <p class="text-gray-600">
+          Fast bids, efficient timeline. We know your schedule is tight, and we
+          stick to it.
+        </p>
+      </div>
+      <div
+        class="bg-white p-8 rounded-xl shadow-sm border border-gray-100"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
+        <h3 class="font-bold text-xl mb-4 text-brand-blue">Communication</h3>
+        <p class="text-gray-600">
+          Owners on-site, daily updates. You'll never have to guess where your
+          project stands.
+        </p>
+      </div>
+      <div
+        class="bg-white p-8 rounded-xl shadow-sm border border-gray-100"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
+        <h3 class="font-bold text-xl mb-4 text-brand-blue">Reliability</h3>
+        <p class="text-gray-600">
+          We work faithfully. Our teams are professional, respectful, and
+          dedicated to the job.
+        </p>
+      </div>
+    </div>
+
+    <!-- Partners List -->
+    <div class="border-t border-gray-200 pt-16" data-aos="fade-up">
+      <p class="text-gray-500 font-bold uppercase tracking-widest text-sm mb-8">
+        Trusted By Contractors Across Southwest Michigan
+      </p>
+      <div
+        class="flex flex-wrapjustify-center gap-x-12 gap-y-6 opacity-60 grayscale hover:grayscale-0 transition-all duration-500"
+      >
+        <div class="flex flex-wrap justify-center gap-6">
+          {
+            partners.map((partner) => (
+              <span class="text-lg font-bold text-gray-700 px-4 py-2 bg-gray-100 rounded-lg">
+                {partner}
+              </span>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

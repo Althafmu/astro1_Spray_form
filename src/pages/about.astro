@@ -2,6 +2,9 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import { Image } from "astro:assets";
+import poleBarnImage from "../assets/pole-barn.png";
+import commercialImage from "../assets/hero-main.png";
 ---
 
 <Layout title="About Us | Lake Michigan Spray Foam">
@@ -34,10 +37,10 @@ import Footer from "../components/Footer.astro";
         class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center"
       >
         <div data-aos="fade-right">
-          <img
-            src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop"
+          <Image
+            src={poleBarnImage}
             alt="Construction framing"
-            class="rounded-2xl shadow-xl hover:scale-[1.02] transition-transform duration-500"
+            class="rounded-2xl shadow-xl hover:scale-[1.02] transition-transform duration-500 w-full h-auto"
           />
         </div>
         <div data-aos="fade-left">
@@ -200,10 +203,10 @@ import Footer from "../components/Footer.astro";
             </div>
             <div class="relative">
               <!-- Placeholder for team photo or job site action shot -->
-              <img
-                src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop"
+              <Image
+                src={commercialImage}
                 alt="Worker safety"
-                class="rounded-xl shadow-lg border-4 border-white/10"
+                class="rounded-xl shadow-lg border-4 border-white/10 w-full h-auto"
               />
             </div>
           </div>

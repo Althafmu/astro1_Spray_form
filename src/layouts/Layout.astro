@@ -1,6 +1,8 @@
 ---
 import "../styles/global.css";
 import "aos/dist/aos.css";
+// Supports weights 200-800
+import "@fontsource-variable/manrope";
 
 interface Props {
   title?: string;
@@ -21,14 +23,6 @@ const {
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-
-    <!-- Google Fonts: Manrope -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
-      rel="stylesheet"
-    />
 
     <title>{title}</title>
   </head>

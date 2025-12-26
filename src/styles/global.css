@@ -1,17 +1,16 @@
 @import "tailwindcss";
 
 @theme {
-  /* Brand Colors: Blue, White, Black, Gray */
-  /* "Similar to Detroit Lions but not Honolulu Blue" -> Deep Professional Blue */
-  --color-brand-blue: #004C8C; 
+  /* Brand Colors */
+  --color-brand-blue: #004c8c;
   --color-brand-blue-dark: #003865;
-  --color-brand-silver: #B5B5B5;
+  --color-brand-silver: #b5b5b5;
   --color-brand-dark: #1a1a1a;
-  
-  --color-primary-bg: #FFFFFF;
+
+  --color-primary-bg: #ffffff;
   --color-primary-text: #1a1a1a;
-  
-  --font-manrope: 'Manrope', sans-serif;
+
+  --font-manrope: "Manrope", sans-serif;
 }
 
 @layer base {
@@ -23,11 +22,10 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
-    text-rendering: optimizeLegibility;
     -webkit-text-size-adjust: 100%;
     overflow-x: hidden;
   }
-  
+
   body {
     overflow-x: hidden;
     width: 100%;
@@ -39,23 +37,33 @@
   }
 }
 
-/* Custom Utilities */
-.glass-nav {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-}
+@layer utilities {
+  .glass-nav {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
 
-.text-brand-blue {
+  .no-select {
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  /* Manual overrides to ensure colors work if theme fails */
+  .text-brand-blue {
     color: var(--color-brand-blue);
-}
+  }
 
-.bg-brand-blue {
+  .bg-brand-blue {
     background-color: var(--color-brand-blue);
-}
+  }
 
-.no-select {
-  user-select: none;
-  -webkit-user-select: none;
+  .hover\:text-brand-blue:hover {
+    color: var(--color-brand-blue);
+  }
+
+  .hover\:bg-brand-blue:hover {
+    background-color: var(--color-brand-blue);
+  }
 }

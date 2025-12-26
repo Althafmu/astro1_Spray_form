@@ -13,7 +13,7 @@ import poleBarnImage from "../assets/pole-barn.png";
   <main id="main-content">
     <!-- Header -->
     <section
-      class="bg-brand-dark text-white pt-32 pb-24 relative overflow-hidden"
+      class="bg-brand-dark text-white pt-24 md:pt-32 pb-16 md:pb-24 relative overflow-hidden"
     >
       <div class="absolute inset-0 z-0 opacity-20">
         <div
@@ -22,11 +22,14 @@ import poleBarnImage from "../assets/pole-barn.png";
         </div>
       </div>
       <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
-        <h1 class="text-4xl md:text-6xl font-bold mb-6" data-aos="zoom-in">
+        <h1
+          class="text-3xl md:text-4xl lg:text-6xl font-bold mb-4 md:mb-6"
+          data-aos="zoom-in"
+        >
           Our Services
         </h1>
         <p
-          class="text-xl text-gray-300 max-w-3xl mx-auto"
+          class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto"
           data-aos="fade-up"
           data-aos-delay="100"
         >
@@ -40,27 +43,29 @@ import poleBarnImage from "../assets/pole-barn.png";
     <div class="bg-gray-50">
       <!-- Spray Foam (Open/Closed) -->
       <section
-        class="py-20 max-w-7xl mx-auto px-6 overflow-hidden"
+        class="py-12 md:py-20 max-w-7xl mx-auto px-6 overflow-hidden"
         id="spray-foam"
       >
-        <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           <div data-aos="fade-right">
-            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-6">
+            <h2
+              class="text-2xl md:text-3xl lg:text-4xl font-bold text-brand-dark mb-4 md:mb-6"
+            >
               Commercial Spray Foam
             </h2>
-            <p class="text-lg text-gray-600 mb-6">
+            <p class="text-base md:text-lg text-gray-600 mb-6">
               We specialize in Accufoam® technology, providing industry-leading
               R-values and structural integrity.
             </p>
 
-            <div class="space-y-6">
+            <div class="space-y-4 md:space-y-6">
               <div
-                class="bg-white p-6 rounded-xl shadow-sm border border-gray-100"
+                class="bg-white p-5 md:p-6 rounded-xl shadow-sm border border-gray-100"
               >
-                <h3 class="text-xl font-bold text-brand-blue mb-2">
+                <h3 class="text-lg md:text-xl font-bold text-brand-blue mb-2">
                   Closed-Cell Foam
                 </h3>
-                <p class="text-gray-600 mb-3">
+                <p class="text-gray-600 mb-3 text-sm md:text-base">
                   <strong>R-7.5 per inch.</strong> The gold standard for structural
                   strength, moisture barriers, and maximum thermal resistance. Ideal
                   for pole barns, metal buildings, and exterior walls.
@@ -76,12 +81,12 @@ import poleBarnImage from "../assets/pole-barn.png";
               </div>
 
               <div
-                class="bg-white p-6 rounded-xl shadow-sm border border-gray-100"
+                class="bg-white p-5 md:p-6 rounded-xl shadow-sm border border-gray-100"
               >
-                <h3 class="text-xl font-bold text-brand-blue mb-2">
+                <h3 class="text-lg md:text-xl font-bold text-brand-blue mb-2">
                   Open-Cell Foam
                 </h3>
-                <p class="text-gray-600 mb-3">
+                <p class="text-gray-600 mb-3 text-sm md:text-base">
                   Excellent expandability for hard-to-reach areas. Great sound
                   dampening qualities and cost-effective insulation for interior
                   walls and confident ceilings.
@@ -90,7 +95,7 @@ import poleBarnImage from "../assets/pole-barn.png";
             </div>
           </div>
           <div
-            class="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl"
+            class="relative h-64 md:h-[500px] rounded-2xl overflow-hidden shadow-2xl mt-8 md:mt-0"
             data-aos="fade-left"
           >
             <Image
@@ -103,11 +108,11 @@ import poleBarnImage from "../assets/pole-barn.png";
       </section>
 
       <!-- Pole Barns / Ag -->
-      <section class="py-20 bg-white overflow-hidden" id="pole-barns">
+      <section class="py-12 md:py-20 bg-white overflow-hidden" id="pole-barns">
         <div class="max-w-7xl mx-auto px-6">
-          <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
             <div
-              class="order-2 md:order-1 relative h-[500px] rounded-2xl overflow-hidden shadow-2xl"
+              class="order-2 md:order-1 relative h-64 md:h-[500px] rounded-2xl overflow-hidden shadow-2xl"
               data-aos="fade-right"
             >
               <Image
@@ -122,10 +127,12 @@ import poleBarnImage from "../assets/pole-barn.png";
               >
                 Our Specialty
               </div>
-              <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-6">
+              <h2
+                class="text-2xl md:text-3xl lg:text-4xl font-bold text-brand-dark mb-4 md:mb-6"
+              >
                 Pole Barns & Agricultural
               </h2>
-              <p class="text-lg text-gray-600 mb-6">
+              <p class="text-base md:text-lg text-gray-600 mb-6">
                 Transform cold, damp metal buildings into comfortable, efficient
                 workspaces. We understand the unique needs of agricultural
                 structures in Michigan.
@@ -189,13 +196,15 @@ import poleBarnImage from "../assets/pole-barn.png";
       </section>
 
       <!-- Roof Coatings & Fireproofing -->
-      <section class="py-20 max-w-7xl mx-auto px-6" id="roofing">
+      <section class="py-12 md:py-20 max-w-7xl mx-auto px-6" id="roofing">
         <div class="grid md:grid-cols-3 gap-8">
-          <div class="col-span-3 text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-4">
+          <div class="col-span-3 text-center mb-8 md:mb-12">
+            <h2
+              class="text-2xl md:text-3xl lg:text-4xl font-bold text-brand-dark mb-4"
+            >
               Specialized Applications
             </h2>
-            <p class="text-gray-600 max-w-2xl mx-auto">
+            <p class="text-gray-600 max-w-2xl mx-auto text-base md:text-lg">
               Beyond standard insulation, we offer critical protection services
               for commercials buildings.
             </p>
@@ -203,13 +212,13 @@ import poleBarnImage from "../assets/pole-barn.png";
 
           <!-- Card 1 -->
           <div
-            class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-brand-blue"
+            class="bg-white p-6 md:p-8 rounded-2xl shadow-lg border-t-4 border-brand-blue"
             data-aos="fade-up"
           >
-            <h3 class="text-2xl font-bold text-brand-dark mb-4">
+            <h3 class="text-xl md:text-2xl font-bold text-brand-dark mb-4">
               Roof Coatings
             </h3>
-            <p class="text-gray-600 mb-6">
+            <p class="text-gray-600 mb-6 text-sm md:text-base">
               Extend the life of your commercial flat roof. Our SPFA certified
               coatings create a seamless, waterproof barrier that reflects UV
               rays and stops leaks.
@@ -218,14 +227,14 @@ import poleBarnImage from "../assets/pole-barn.png";
 
           <!-- Card 2 -->
           <div
-            class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-brand-blue"
+            class="bg-white p-6 md:p-8 rounded-2xl shadow-lg border-t-4 border-brand-blue"
             data-aos="fade-up"
             data-aos-delay="100"
           >
-            <h3 class="text-2xl font-bold text-brand-dark mb-4">
+            <h3 class="text-xl md:text-2xl font-bold text-brand-dark mb-4">
               Fireproofing
             </h3>
-            <p class="text-gray-600 mb-6">
+            <p class="text-gray-600 mb-6 text-sm md:text-base">
               Application of thermal barriers and ignition barriers to meet IECC
               building codes. Essential for exposed foam in occupied spaces.
             </p>
@@ -233,12 +242,14 @@ import poleBarnImage from "../assets/pole-barn.png";
 
           <!-- Card 3 -->
           <div
-            class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-brand-blue"
+            class="bg-white p-6 md:p-8 rounded-2xl shadow-lg border-t-4 border-brand-blue"
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            <h3 class="text-2xl font-bold text-brand-dark mb-4">Air Sealing</h3>
-            <p class="text-gray-600 mb-6">
+            <h3 class="text-xl md:text-2xl font-bold text-brand-dark mb-4">
+              Air Sealing
+            </h3>
+            <p class="text-gray-600 mb-6 text-sm md:text-base">
               Draft reduction and energy efficiency upgrades. We locate and seal
               leaks that fiberglass simply can't stop.
             </p>
@@ -247,16 +258,18 @@ import poleBarnImage from "../assets/pole-barn.png";
       </section>
 
       <!-- CTA -->
-      <section class="py-20 bg-brand-blue text-white text-center">
+      <section class="py-16 md:py-20 bg-brand-blue text-white text-center">
         <div class="max-w-4xl mx-auto px-6">
-          <h2 class="text-3xl font-bold mb-6">Not sure what you need?</h2>
-          <p class="text-xl opacity-90 mb-8">
+          <h2 class="text-2xl md:text-3xl font-bold mb-4 md:mb-6">
+            Not sure what you need?
+          </h2>
+          <p class="text-lg md:text-xl opacity-90 mb-8">
             We offer free site visits and we'll help you determine the best
             solution for your specific building.
           </p>
           <a
             href="/contact"
-            class="inline-block bg-white text-brand-blue px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all shadow-md hover:shadow-lg hover:scale-105 active:scale-95"
+            class="inline-block bg-white text-brand-blue px-6 py-3 md:px-8 md:py-4 rounded-full font-bold text-base md:text-lg hover:bg-gray-100 transition-all shadow-md hover:shadow-lg hover:scale-105 active:scale-95"
           >
             Schedule Free Site Visit
           </a>

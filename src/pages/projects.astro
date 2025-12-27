@@ -1,0 +1,63 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import ProjectsList from "../components/Projects.astro";
+---
+
+<Layout title="Projects | Lake Michigan Spray Foam">
+  <Header />
+
+  <main id="main-content">
+    <!-- Header -->
+    <section
+      class="bg-brand-dark text-white pt-24 md:pt-32 pb-16 md:pb-24 relative overflow-hidden"
+    >
+      <div class="absolute inset-0 z-0 opacity-20">
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-brand-blue to-black mix-blend-multiply"
+        >
+        </div>
+      </div>
+      <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+        <h1
+          class="text-3xl md:text-4xl lg:text-6xl font-bold mb-4 md:mb-6"
+          data-aos="zoom-in"
+        >
+          Our Projects
+        </h1>
+        <p
+          class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          See how we've helped businesses and homeowners across Southwest
+          Michigan improve efficiency and comfort.
+        </p>
+      </div>
+    </section>
+
+    <ProjectsList />
+
+    <!-- CTA -->
+    <section class="py-16 md:py-20 bg-brand-blue text-white text-center">
+      <div class="max-w-4xl mx-auto px-6">
+        <h2 class="text-2xl md:text-3xl font-bold mb-4 md:mb-6">
+          Have a project in mind?
+        </h2>
+        <p class="text-lg md:text-xl opacity-90 mb-8">
+          We offer free site visits and we'll help you determine the best
+          solution for your specific building.
+        </p>
+        <a
+          href="/contact"
+          class="inline-block bg-white text-brand-blue px-6 py-3 md:px-8 md:py-4 rounded-full font-bold text-base md:text-lg hover:bg-gray-100 transition-all shadow-md hover:shadow-lg hover:scale-105 active:scale-95"
+        >
+          Get a Free Quote
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

@@ -3,55 +3,93 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import ProjectsList from "../components/Projects.astro";
+import ProjectGallery from "../components/ProjectGallery.tsx";
+import { Image } from "astro:assets";
+import heroImage from "../assets/project-1.png"; // Use a project image for hero
 ---
 
 <Layout title="Projects | Lake Michigan Spray Foam">
   <Header />
 
   <main id="main-content">
-    <!-- Header -->
+    <!-- Hero Header -->
     <section
-      class="bg-brand-dark text-white pt-24 md:pt-32 pb-16 md:pb-24 relative overflow-hidden"
+      class="relative min-h-[50vh] flex items-center justify-center overflow-hidden bg-brand-dark"
     >
-      <div class="absolute inset-0 z-0 opacity-20">
+      <div class="absolute inset-0 z-0">
+        <Image
+          src={heroImage}
+          alt="Our Projects"
+          class="w-full h-full object-cover opacity-30"
+        />
         <div
-          class="absolute inset-0 bg-gradient-to-r from-brand-blue to-black mix-blend-multiply"
+          class="absolute inset-0 bg-gradient-to-b from-brand-dark/90 via-brand-dark/50 to-brand-dark z-10"
         >
         </div>
       </div>
-      <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
-        <h1
-          class="text-3xl md:text-4xl lg:text-6xl font-bold mb-4 md:mb-6"
-          data-aos="zoom-in"
+
+      <div class="relative z-20 max-w-7xl mx-auto px-6 text-center pt-24">
+        <span
+          class="text-brand-blue font-bold tracking-widest uppercase mb-4 block"
+          data-aos="fade-up">Portfolio</span
         >
-          Our Projects
-        </h1>
-        <p
-          class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto"
-          data-aos="fade-up"
+        <h1
+          class="text-4xl md:text-6xl font-bold text-white mb-6"
+          data-aos="zoom-in"
           data-aos-delay="100"
         >
-          See how we've helped businesses and homeowners across Southwest
-          Michigan improve efficiency and comfort.
+          Our Work <span class="text-brand-blue">Speaks For Itself.</span>
+        </h1>
+        <p
+          class="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed font-light"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          See how we've helped businesses and property owners across Southwest
+          Michigan improve efficiency, comfort, and structural integrity.
         </p>
       </div>
     </section>
 
-    <ProjectsList />
+    <!-- Recent Featured Projects -->
+    <div class="bg-gray-50 pt-20">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900">Featured Case Studies</h2>
+        <div class="w-16 h-1 bg-brand-blue mx-auto mt-4 rounded-full"></div>
+      </div>
+      <ProjectsList />
+    </div>
+
+    <!-- Interactive Gallery -->
+    <section class="py-24 bg-gray-50 min-h-screen">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-5xl font-bold text-brand-dark mb-4">
+            Project Gallery
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Explore our diverse portfolio of commercial, agricultural, and
+            specialized insulation projects.
+          </p>
+        </div>
+        <ProjectGallery client:load />
+      </div>
+    </section>
 
     <!-- CTA -->
-    <section class="py-16 md:py-20 bg-brand-blue text-white text-center">
-      <div class="max-w-4xl mx-auto px-6">
-        <h2 class="text-2xl md:text-3xl font-bold mb-4 md:mb-6">
+    <section class="py-24 relative overflow-hidden text-center bg-brand-blue">
+      <div class="absolute inset-0 bg-black/10"></div>
+      <div class="max-w-4xl mx-auto px-6 relative z-10 text-white">
+        <h2 class="text-3xl md:text-5xl font-bold mb-6">
           Have a project in mind?
         </h2>
-        <p class="text-lg md:text-xl opacity-90 mb-8">
+        <p class="text-xl opacity-90 mb-10 max-w-2xl mx-auto font-light">
           We offer free site visits and we'll help you determine the best
-          solution for your specific building.
+          solution for your building.
         </p>
         <a
           href="/contact"
-          class="inline-block bg-white text-brand-blue px-6 py-3 md:px-8 md:py-4 rounded-full font-bold text-base md:text-lg hover:bg-gray-100 transition-all shadow-md hover:shadow-lg hover:scale-105 active:scale-95"
+          class="inline-block bg-white text-brand-blue px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95"
         >
           Get a Free Quote
         </a>

@@ -5,274 +5,735 @@ import Footer from "../components/Footer.astro";
 import { Image } from "astro:assets";
 import sprayFoamImage from "../assets/hero-main.png";
 import poleBarnImage from "../assets/pole-barn.png";
+import roofImage from "../assets/roof-coating.png"; // Assuming we have this, or fallback to main
 ---
 
 <Layout title="Services | Lake Michigan Spray Foam">
   <Header />
 
   <main id="main-content">
-    <!-- Header -->
+    <!-- Hero Header -->
     <section
-      class="bg-brand-dark text-white pt-24 md:pt-32 pb-16 md:pb-24 relative overflow-hidden"
+      class="relative min-h-[50vh] flex items-center justify-center overflow-hidden bg-brand-dark"
     >
-      <div class="absolute inset-0 z-0 opacity-20">
+      <div class="absolute inset-0 z-0">
+        <Image
+          src={sprayFoamImage}
+          alt="Spray Foam Services"
+          class="w-full h-full object-cover opacity-30"
+        />
         <div
-          class="absolute inset-0 bg-gradient-to-r from-brand-blue to-black mix-blend-multiply"
+          class="absolute inset-0 bg-gradient-to-b from-brand-dark/80 via-brand-dark/60 to-brand-dark z-10"
+        >
+        </div>
+        <!-- Animated particles/gradients -->
+        <div
+          class="absolute top-0 left-1/4 w-96 h-96 bg-brand-blue/20 rounded-full blur-[100px] animate-pulse"
         >
         </div>
       </div>
-      <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
-        <h1
-          class="text-3xl md:text-4xl lg:text-6xl font-bold mb-4 md:mb-6"
-          data-aos="zoom-in"
+
+      <div class="relative z-20 max-w-7xl mx-auto px-6 text-center pt-24">
+        <span
+          class="text-brand-blue font-bold tracking-widest uppercase mb-4 block"
+          data-aos="fade-up">Our Capabilities</span
         >
-          Our Services
-        </h1>
-        <p
-          class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto"
-          data-aos="fade-up"
+        <h1
+          class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6"
+          data-aos="zoom-in"
           data-aos-delay="100"
         >
-          Professional commercial and agricultural insulation solutions. SPFA
-          Certified and ensuring elite performance with every spray.
+          Performance. <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-cyan-400"
+            >Guaranteed.</span
+          >
+        </h1>
+        <p
+          class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-light"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          From commercial warehouses to agricultural pole barns, we deliver
+          insulation solutions that reduce costs and increase structural
+          integrity.
         </p>
       </div>
     </section>
 
     <!-- Services List -->
-    <div class="bg-gray-50">
+    <div class="bg-brand-dark text-white relative">
+      <!-- Curve Separator -->
+      <div
+        class="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-brand-dark to-transparent z-10"
+      >
+      </div>
+
       <!-- Spray Foam (Open/Closed) -->
       <section
-        class="py-12 md:py-20 max-w-7xl mx-auto px-6 overflow-hidden"
+        class="py-24 max-w-7xl mx-auto px-6 relative z-10"
         id="spray-foam"
       >
-        <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
           <div data-aos="fade-right">
+            <div class="w-16 h-1 bg-brand-blue mb-6"></div>
             <h2
-              class="text-2xl md:text-3xl lg:text-4xl font-bold text-brand-dark mb-4 md:mb-6"
+              class="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight"
             >
-              Commercial Spray Foam
+              Commercial <br /><span class="text-brand-blue">Spray Foam</span>
             </h2>
-            <p class="text-base md:text-lg text-gray-600 mb-6">
+            <p class="text-lg text-gray-300 mb-8 leading-relaxed">
               We specialize in Accufoam® technology, providing industry-leading
-              R-values and structural integrity.
+              R-values. Whether you need the structural rigidity of closed-cell
+              or the sound-dampening qualities of open-cell, we have the
+              expertise.
             </p>
 
-            <div class="space-y-4 md:space-y-6">
+            <div class="grid gap-6">
+              <!-- Card 1 -->
               <div
-                class="bg-white p-5 md:p-6 rounded-xl shadow-sm border border-gray-100"
+                class="bg-white/5 border border-white/10 p-6 rounded-2xl hover:bg-white/10 transition-colors"
               >
-                <h3 class="text-lg md:text-xl font-bold text-brand-blue mb-2">
+                <h3
+                  class="text-xl font-bold text-white mb-2 flex items-center gap-2"
+                >
+                  <span class="w-2 h-2 rounded-full bg-brand-blue"></span>
                   Closed-Cell Foam
                 </h3>
-                <p class="text-gray-600 mb-3 text-sm md:text-base">
+                <p class="text-gray-400 text-sm mb-3">
                   <strong>R-7.5 per inch.</strong> The gold standard for structural
-                  strength, moisture barriers, and maximum thermal resistance. Ideal
-                  for pole barns, metal buildings, and exterior walls.
+                  strength and moisture barriers.
                 </p>
-                <ul class="text-sm space-y-2 text-gray-500">
-                  <li class="flex items-center gap-2">
-                    <span class="text-brand-blue">✓</span> Adds structural strength
-                  </li>
-                  <li class="flex items-center gap-2">
-                    <span class="text-brand-blue">✓</span> Acts as a vapor barrier
-                  </li>
+                <ul
+                  class="flex gap-4 text-xs font-bold uppercase tracking-wider text-brand-blue"
+                >
+                  <li>Structurally Rigid</li>
+                  <li>Vapor Barrier</li>
                 </ul>
               </div>
 
+              <!-- Card 2 -->
               <div
-                class="bg-white p-5 md:p-6 rounded-xl shadow-sm border border-gray-100"
+                class="bg-white/5 border border-white/10 p-6 rounded-2xl hover:bg-white/10 transition-colors"
               >
-                <h3 class="text-lg md:text-xl font-bold text-brand-blue mb-2">
+                <h3
+                  class="text-xl font-bold text-white mb-2 flex items-center gap-2"
+                >
+                  <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
                   Open-Cell Foam
                 </h3>
-                <p class="text-gray-600 mb-3 text-sm md:text-base">
-                  Excellent expandability for hard-to-reach areas. Great sound
-                  dampening qualities and cost-effective insulation for interior
-                  walls and confident ceilings.
+                <p class="text-gray-400 text-sm">
+                  Excellent expandability and sound dampening. Cost-effective
+                  for interior walls.
                 </p>
               </div>
             </div>
           </div>
-          <div
-            class="relative h-64 md:h-[500px] rounded-2xl overflow-hidden shadow-2xl mt-8 md:mt-0"
-            data-aos="fade-left"
-          >
-            <Image
-              src={sprayFoamImage}
-              alt="Spray foam application"
-              class="absolute inset-0 w-full h-full object-cover"
-            />
+
+          <div class="relative group" data-aos="fade-left">
+            <div
+              class="absolute -inset-4 bg-gradient-to-r from-brand-blue to-cyan-500 rounded-3xl opacity-20 blur-xl group-hover:opacity-40 transition-opacity duration-500"
+            >
+            </div>
+            <div
+              class="relative h-[600px] rounded-2xl overflow-hidden shadow-2xl border border-white/10"
+            >
+              <Image
+                src={sprayFoamImage}
+                alt="Spray foam application"
+                class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-transparent to-transparent"
+              >
+              </div>
+              <div class="absolute bottom-8 left-8 right-8">
+                <div
+                  class="flex items-center gap-4 text-white/80 text-sm font-mono"
+                >
+                  <div
+                    class="px-3 py-1 border border-white/20 rounded-full bg-black/40 backdrop-blur-md"
+                  >
+                    Accufoam® Tech
+                  </div>
+                  <div
+                    class="px-3 py-1 border border-white/20 rounded-full bg-black/40 backdrop-blur-md"
+                  >
+                    SPFA Certified
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       <!-- Pole Barns / Ag -->
-      <section class="py-12 md:py-20 bg-white overflow-hidden" id="pole-barns">
-        <div class="max-w-7xl mx-auto px-6">
-          <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+      <section
+        class="py-24 bg-gray-50 text-brand-dark overflow-hidden relative"
+        id="pole-barns"
+      >
+        <!-- Abstract shape -->
+        <div
+          class="absolute top-0 right-0 w-[800px] h-[800px] bg-white rounded-full mix-blend-overlay opacity-50 blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"
+        >
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+          <div class="grid lg:grid-cols-2 gap-16 items-center">
             <div
-              class="order-2 md:order-1 relative h-64 md:h-[500px] rounded-2xl overflow-hidden shadow-2xl"
+              class="order-2 lg:order-1 relative group"
               data-aos="fade-right"
             >
-              <Image
-                src={poleBarnImage}
-                alt="Agricultural barn interior"
-                class="absolute inset-0 w-full h-full object-cover"
-              />
-            </div>
-            <div class="order-1 md:order-2" data-aos="fade-left">
               <div
-                class="inline-block px-4 py-1 bg-brand-blue/10 text-brand-blue rounded-full text-sm font-bold mb-4"
+                class="absolute -inset-4 bg-gradient-to-l from-brand-blue to-cyan-500 rounded-3xl opacity-20 blur-xl group-hover:opacity-40 transition-opacity duration-500"
               >
-                Our Specialty
               </div>
-              <h2
-                class="text-2xl md:text-3xl lg:text-4xl font-bold text-brand-dark mb-4 md:mb-6"
+              <div
+                class="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl"
               >
-                Pole Barns & Agricultural
+                <Image
+                  src={poleBarnImage}
+                  alt="Agricultural barn interior"
+                  class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                />
+                <!-- Overlay Info -->
+                <div class="absolute bottom-6 left-6 grid grid-cols-2 gap-2">
+                  <div
+                    class="bg-white/90 backdrop-blur text-brand-dark p-3 rounded-lg text-center shadow-lg"
+                  >
+                    <span class="block text-2xl font-bold">100%</span>
+                    <span
+                      class="text-xs uppercase font-bold tracking-wider text-gray-500"
+                      >Condensation Free</span
+                    >
+                  </div>
+                  <div
+                    class="bg-brand-blue/90 backdrop-blur text-white p-3 rounded-lg text-center shadow-lg"
+                  >
+                    <span class="block text-2xl font-bold">Year</span>
+                    <span
+                      class="text-xs uppercase font-bold tracking-wider text-white/80"
+                      >Round Comfort</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="order-1 lg:order-2" data-aos="fade-left">
+              <span
+                class="text-brand-blue font-bold tracking-wider uppercase text-sm mb-2 block"
+                >Our Specialty</span
+              >
+              <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+                Pole Barns & <br />Agricultural
               </h2>
-              <p class="text-base md:text-lg text-gray-600 mb-6">
-                Transform cold, damp metal buildings into comfortable, efficient
-                workspaces. We understand the unique needs of agricultural
-                structures in Michigan.
+              <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                Michigan winters are tough. Metal buildings sweat. We solve both
+                problems at once. Transform cold, damp storage into comfortable,
+                efficient workspaces.
               </p>
 
-              <ul class="space-y-4 mb-8">
-                <li class="flex items-start gap-3">
+              <div class="space-y-6">
+                <div class="flex gap-4">
                   <div
-                    class="w-6 h-6 rounded-full bg-brand-blue text-white flex items-center justify-center shrink-0 mt-1"
+                    class="w-12 h-12 rounded-full bg-brand-blue/10 flex items-center justify-center shrink-0"
                   >
-                    1
+                    <span class="font-bold text-brand-blue text-xl">1</span>
                   </div>
                   <div>
-                    <h4 class="font-bold text-brand-dark">
-                      Eliminate Condensation
+                    <h4 class="font-bold text-xl text-brand-dark">
+                      Eliminate "The Drip"
                     </h4>
-                    <p class="text-sm text-gray-600">
-                      Stop the "sweating ceiling" effect that drips on equipment
-                      and livestock.
+                    <p class="text-gray-600">
+                      Stop condensation from ruining your equipment and
+                      livestock bedding.
                     </p>
                   </div>
-                </li>
-                <li class="flex items-start gap-3">
+                </div>
+                <div class="flex gap-4">
                   <div
-                    class="w-6 h-6 rounded-full bg-brand-blue text-white flex items-center justify-center shrink-0 mt-1"
+                    class="w-12 h-12 rounded-full bg-brand-blue/10 flex items-center justify-center shrink-0"
                   >
-                    2
+                    <span class="font-bold text-brand-blue text-xl">2</span>
                   </div>
                   <div>
-                    <h4 class="font-bold text-brand-dark">Climate Control</h4>
-                    <p class="text-sm text-gray-600">
-                      Keep heated shops warm in winter and cool in summer with
-                      minimal energy cost.
+                    <h4 class="font-bold text-xl text-brand-dark">
+                      Critter Control
+                    </h4>
+                    <p class="text-gray-600">
+                      Seal the gaps where rodents, birds, and insects infiltrate
+                      your building.
                     </p>
                   </div>
-                </li>
-                <li class="flex items-start gap-3">
-                  <div
-                    class="w-6 h-6 rounded-full bg-brand-blue text-white flex items-center justify-center shrink-0 mt-1"
-                  >
-                    3
-                  </div>
-                  <div>
-                    <h4 class="font-bold text-brand-dark">Pest Reduction</h4>
-                    <p class="text-sm text-gray-600">
-                      Seal gaps where rodents and birds enter.
-                    </p>
-                  </div>
-                </li>
-              </ul>
-
-              <a
-                href="/contact"
-                class="text-brand-blue font-bold hover:underline flex items-center gap-2"
-              >
-                Get a Quote for Your Barn <span>→</span>
-              </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Roof Coatings & Fireproofing -->
-      <section class="py-12 md:py-20 max-w-7xl mx-auto px-6" id="roofing">
-        <div class="flex flex-col md:grid md:grid-cols-3 gap-8">
-          <div class="col-span-3 text-center mb-8 md:mb-12">
-            <h2
-              class="text-2xl md:text-3xl lg:text-4xl font-bold text-brand-dark mb-4"
-            >
+      <!-- Roof Coatings & Specialized -->
+      <section
+        class="py-24 bg-brand-dark relative overflow-hidden"
+        id="roofing"
+      >
+        <div class="absolute inset-0 bg-[url('/noise.png')] opacity-5"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
               Specialized Applications
             </h2>
-            <p class="text-gray-600 max-w-2xl mx-auto text-base md:text-lg">
+            <p class="text-gray-400 max-w-2xl mx-auto text-lg">
               Beyond standard insulation, we offer critical protection services
-              for commercials buildings.
+              for industrial facilities.
             </p>
           </div>
 
-          <!-- Card 1 -->
-          <div
-            class="bg-white p-6 md:p-8 rounded-2xl shadow-lg border-t-4 border-brand-blue"
-            data-aos="fade-up"
-          >
-            <h3 class="text-xl md:text-2xl font-bold text-brand-dark mb-4">
-              Roof Coatings
-            </h3>
-            <p class="text-gray-600 mb-6 text-sm md:text-base">
-              Extend the life of your commercial flat roof. Our SPFA certified
-              coatings create a seamless, waterproof barrier that reflects UV
-              rays and stops leaks.
-            </p>
+          <div class="grid md:grid-cols-3 gap-8">
+            <!-- Card 1 -->
+            <div
+              class="bg-gradient-to-b from-white/10 to-white/5 p-8 rounded-3xl border border-white/10 hover:border-brand-blue/50 transition-all group hover:-translate-y-2"
+              data-aos="fade-up"
+            >
+              <div
+                class="w-14 h-14 bg-brand-blue rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-brand-blue/20 group-hover:scale-110 transition-transform"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-7 h-7 text-white"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  ><path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"
+                  ></path></svg
+                >
+              </div>
+              <h3 class="text-2xl font-bold text-white mb-4">Roof Coatings</h3>
+              <p class="text-gray-400 leading-relaxed mb-6">
+                Extend the life of your commercial flat roof. Our SPFA certified
+                coatings create a seamless, waterproof barrier that reflects UV
+                rays.
+              </p>
+              <a
+                href="/contact"
+                class="text-brand-blue font-bold hover:text-white transition-colors flex items-center gap-2"
+                >Get an Assessment <span>&rarr;</span></a
+              >
+            </div>
+
+            <!-- Card 2 -->
+            <div
+              class="bg-gradient-to-b from-white/10 to-white/5 p-8 rounded-3xl border border-white/10 hover:border-brand-blue/50 transition-all group hover:-translate-y-2"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div
+                class="w-14 h-14 bg-cyan-600 rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-cyan-600/20 group-hover:scale-110 transition-transform"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-7 h-7 text-white"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  ><path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"
+                  ></path><path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"
+                  ></path></svg
+                >
+              </div>
+              <h3 class="text-2xl font-bold text-white mb-4">Fireproofing</h3>
+              <p class="text-gray-400 leading-relaxed mb-6">
+                Application of thermal barriers and ignition barriers to meet
+                IECC building codes. Essential for exposed foam in occupied
+                spaces.
+              </p>
+            </div>
+
+            <!-- Card 3 -->
+            <div
+              class="bg-gradient-to-b from-white/10 to-white/5 p-8 rounded-3xl border border-white/10 hover:border-brand-blue/50 transition-all group hover:-translate-y-2"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div
+                class="w-14 h-14 bg-indigo-600 rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-indigo-600/20 group-hover:scale-110 transition-transform"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-7 h-7 text-white"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  ><path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
+                  ></path><path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg
+                >
+              </div>
+              <h3 class="text-2xl font-bold text-white mb-4">Air Sealing</h3>
+              <p class="text-gray-400 leading-relaxed mb-6">
+                Draft reduction and energy efficiency upgrades. We locate and
+                seal leaks that fiberglass simply can't stop.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- NEW SECTION: Our Process -->
+      <section class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+          <div class="text-center mb-16">
+            <span
+              class="text-brand-blue font-bold tracking-widest uppercase text-sm"
+              >How It Works</span
+            >
+            <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mt-2">
+              The Application Process
+            </h2>
           </div>
 
-          <!-- Card 2 -->
-          <div
-            class="bg-white p-6 md:p-8 rounded-2xl shadow-lg border-t-4 border-brand-blue"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            <h3 class="text-xl md:text-2xl font-bold text-brand-dark mb-4">
-              Fireproofing
-            </h3>
-            <p class="text-gray-600 mb-6 text-sm md:text-base">
-              Application of thermal barriers and ignition barriers to meet IECC
-              building codes. Essential for exposed foam in occupied spaces.
-            </p>
-          </div>
+          <div class="grid md:grid-cols-4 gap-8 relative">
+            <!-- Connecting Line (Desktop) -->
+            <div
+              class="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-gray-200 -z-10"
+            >
+            </div>
 
-          <!-- Card 3 -->
-          <div
-            class="bg-white p-6 md:p-8 rounded-2xl shadow-lg border-t-4 border-brand-blue"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            <h3 class="text-xl md:text-2xl font-bold text-brand-dark mb-4">
-              Air Sealing
-            </h3>
-            <p class="text-gray-600 mb-6 text-sm md:text-base">
-              Draft reduction and energy efficiency upgrades. We locate and seal
-              leaks that fiberglass simply can't stop.
-            </p>
+            <!-- Step 1 -->
+            <div
+              class="relative bg-white p-8 rounded-2xl shadow-lg border border-gray-100 text-center"
+              data-aos="fade-up"
+              data-aos-delay="0"
+            >
+              <div
+                class="w-16 h-16 mx-auto bg-brand-blue text-white rounded-full flex items-center justify-center text-2xl font-bold mb-6 border-4 border-gray-50 relative z-10"
+              >
+                1
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">Site Consult</h3>
+              <p class="text-gray-600 text-sm">
+                We visit your site to assess needs, measure square footage, and
+                determine the optimal foam type.
+              </p>
+            </div>
+
+            <!-- Step 2 -->
+            <div
+              class="relative bg-white p-8 rounded-2xl shadow-lg border border-gray-100 text-center"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div
+                class="w-16 h-16 mx-auto bg-brand-blue text-white rounded-full flex items-center justify-center text-2xl font-bold mb-6 border-4 border-gray-50 relative z-10"
+              >
+                2
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">Prep Work</h3>
+              <p class="text-gray-600 text-sm">
+                Our team masks off windows, floors, and sensitive equipment to
+                ensure a clean application.
+              </p>
+            </div>
+
+            <!-- Step 3 -->
+            <div
+              class="relative bg-white p-8 rounded-2xl shadow-lg border border-gray-100 text-center"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div
+                class="w-16 h-16 mx-auto bg-brand-blue text-white rounded-full flex items-center justify-center text-2xl font-bold mb-6 border-4 border-gray-50 relative z-10"
+              >
+                3
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">Application</h3>
+              <p class="text-gray-600 text-sm">
+                Certified installers spray the foam, which expands 30-100x to
+                fill every crack and void instantly.
+              </p>
+            </div>
+
+            <!-- Step 4 -->
+            <div
+              class="relative bg-white p-8 rounded-2xl shadow-lg border border-gray-100 text-center"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <div
+                class="w-16 h-16 mx-auto bg-brand-blue text-white rounded-full flex items-center justify-center text-2xl font-bold mb-6 border-4 border-gray-50 relative z-10"
+              >
+                4
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">Clean Up</h3>
+              <p class="text-gray-600 text-sm">
+                We trim excess foam, remove protective coverings, and leave your
+                space cleaner than we found it.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- NEW SECTION: Comparison Table -->
+      <section class="py-24 bg-white">
+        <div class="max-w-5xl mx-auto px-6">
+          <div class="bg-brand-dark rounded-3xl overflow-hidden shadow-2xl">
+            <div class="grid md:grid-cols-2">
+              <div class="p-10 md:p-14">
+                <span
+                  class="text-brand-blue font-bold tracking-widest uppercase text-sm"
+                  >Performance Comparison</span
+                >
+                <h2 class="text-3xl font-bold text-white mt-2 mb-6">
+                  Why Spray Foam Wins
+                </h2>
+                <p class="text-gray-400 mb-8 leading-relaxed">
+                  While traditional fiberglass batting is cheaper upfront, it
+                  sags, settles, and allows airflow over time. Spray foam is a
+                  permanent solution that pays for itself.
+                </p>
+                <a
+                  href="/contact"
+                  class="inline-flex items-center gap-2 text-white font-bold hover:text-brand-blue transition-colors"
+                >
+                  Get a Quote for Your Building <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-5 h-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    ><path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg
+                  >
+                </a>
+              </div>
+              <div class="bg-white/5 p-10 md:p-14 border-l border-white/10">
+                <div class="space-y-6">
+                  <!-- Row 1 -->
+                  <div
+                    class="flex items-center justify-between border-b border-white/10 pb-4"
+                  >
+                    <div>
+                      <p class="text-white font-bold">Air Seal</p>
+                      <p class="text-xs text-gray-500">Stops drafts?</p>
+                    </div>
+                    <div class="flex gap-8 text-sm">
+                      <span class="text-gray-500 text-right w-20"
+                        >Fiberglass<br /><span class="text-red-400 font-bold"
+                          >No</span
+                        ></span
+                      >
+                      <span class="text-white text-right w-20"
+                        >Spray Foam<br /><span class="text-green-400 font-bold"
+                          >100%</span
+                        ></span
+                      >
+                    </div>
+                  </div>
+                  <!-- Row 2 -->
+                  <div
+                    class="flex items-center justify-between border-b border-white/10 pb-4"
+                  >
+                    <div>
+                      <p class="text-white font-bold">R-Value / Inch</p>
+                      <p class="text-xs text-gray-500">Insulation power</p>
+                    </div>
+                    <div class="flex gap-8 text-sm">
+                      <span class="text-gray-500 text-right w-20"
+                        >~3.2<br /><span class="text-xs">Degrades</span></span
+                      >
+                      <span class="text-white text-right w-20"
+                        >Up to 7.0<br /><span class="text-xs">Permanent</span
+                        ></span
+                      >
+                    </div>
+                  </div>
+                  <!-- Row 3 -->
+                  <div class="flex items-center justify-between pt-2">
+                    <div>
+                      <p class="text-white font-bold">Moisture</p>
+                      <p class="text-xs text-gray-500">Water resistance</p>
+                    </div>
+                    <div class="flex gap-8 text-sm">
+                      <span class="text-gray-500 text-right w-20"
+                        >Absorbs<br /><span class="text-red-400 font-bold"
+                          >Mold Risk</span
+                        ></span
+                      >
+                      <span class="text-white text-right w-20"
+                        >Repels<br /><span class="text-green-400 font-bold"
+                          >Waterproof</span
+                        ></span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- NEW SECTION: FAQ -->
+      <section class="py-24 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-6">
+          <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">
+            Common Questions
+          </h2>
+
+          <div class="space-y-4">
+            <details
+              class="group bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden"
+            >
+              <summary
+                class="flex justify-between items-center p-6 cursor-pointer list-none"
+              >
+                <span class="font-bold text-lg text-brand-dark"
+                  >How long does the foam take to cure?</span
+                >
+                <span class="transition group-open:rotate-180">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-6 h-6 text-brand-blue"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    ><path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"></path></svg
+                  >
+                </span>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                Spray foam cures to the touch almost immediately (seconds).
+                However, we recommend waiting 24 hours before re-occupying the
+                space fully to ensure off-gassing is complete, especially for
+                interiors.
+              </div>
+            </details>
+
+            <details
+              class="group bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden"
+            >
+              <summary
+                class="flex justify-between items-center p-6 cursor-pointer list-none"
+              >
+                <span class="font-bold text-lg text-brand-dark"
+                  >Is spray foam safe for my family/employees?</span
+                >
+                <span class="transition group-open:rotate-180">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-6 h-6 text-brand-blue"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    ><path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"></path></svg
+                  >
+                </span>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                Yes. Once cured, spray foam is inert and non-toxic. We use
+                modern, low-VOC formulas and strictly adhere to re-entry times
+                to ensure safety. It can arguably improve indoor air quality by
+                sealing out allergens.
+              </div>
+            </details>
+
+            <details
+              class="group bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden"
+            >
+              <summary
+                class="flex justify-between items-center p-6 cursor-pointer list-none"
+              >
+                <span class="font-bold text-lg text-brand-dark"
+                  >Can you spray existing walls?</span
+                >
+                <span class="transition group-open:rotate-180">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-6 h-6 text-brand-blue"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    ><path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"></path></svg
+                  >
+                </span>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                It depends. For open walls (new construction/remodel), yes. for
+                closed walls (drywall up), we typically recommend "injection
+                foam" or removing the drywall. Contact us to discuss your
+                specific situation.
+              </div>
+            </details>
           </div>
         </div>
       </section>
 
       <!-- CTA -->
-      <section class="py-16 md:py-20 bg-brand-blue text-white text-center">
-        <div class="max-w-4xl mx-auto px-6">
-          <h2 class="text-2xl md:text-3xl font-bold mb-4 md:mb-6">
-            Not sure what you need?
+      <section class="py-24 relative overflow-hidden text-center">
+        <div
+          class="absolute inset-0 bg-gradient-to-br from-brand-blue to-blue-900"
+        >
+        </div>
+        <div class="absolute inset-0 bg-[url('/noise.png')] opacity-10"></div>
+
+        <div class="max-w-4xl mx-auto px-6 relative z-10 text-white">
+          <h2 class="text-4xl md:text-5xl font-bold mb-6">
+            We're Ready To Help
           </h2>
-          <p class="text-lg md:text-xl opacity-90 mb-8">
+          <p class="text-xl opacity-90 mb-10 max-w-2xl mx-auto font-light">
             We offer free site visits and we'll help you determine the best
-            solution for your specific building.
+            solution for your project. No pressure, just honest advice.
           </p>
-          <a
-            href="/contact"
-            class="inline-block bg-white text-brand-blue px-6 py-3 md:px-8 md:py-4 rounded-full font-bold text-base md:text-lg hover:bg-gray-100 transition-all shadow-md hover:shadow-lg hover:scale-105 active:scale-95"
-          >
-            Schedule Free Site Visit
-          </a>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="/contact"
+              class="inline-block bg-white text-brand-blue px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95"
+            >
+              Schedule Free Site Visit
+            </a>
+            <a
+              href="tel:269-876-0598"
+              class="inline-block border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-all"
+            >
+              Call 269-876-0598
+            </a>
+          </div>
         </div>
       </section>
     </div>

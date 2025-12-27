@@ -3,75 +3,90 @@ import { Image } from "astro:assets";
 import project1 from "../assets/project-1.png";
 import project2 from "../assets/project-2.png";
 
-// Using this for "Featured Projects" now
 const projects = [
   {
     title: "Christian Center (Coloma)",
     category: "Commercial Insulation",
-    description: "Auditorium & attic spray foam + silos application.",
-    image: project1
+    description:
+      "Full auditorium and attic spray foam application, plus specialized silo insulation for moisture control.",
+    image: project1,
+    stats: ["R-49 Ceiling", "Sound Dampening"],
   },
   {
     title: "Saint Joseph Catholic Church",
-    category: "Soundproofing & Remodel",
-    description: "Soundproofing and insulating confessionals during sanctuary remodel.",
-    image: project2 
+    category: "Restoration & Sound",
+    description:
+      "Sensitive restoration project involving soundproofing confessionals and insulating the sanctuary during a major remodel.",
+    image: project2,
+    stats: ["Historic Care", "Acoustics"],
   },
   {
     title: "Revive Church (Coloma)",
     category: "HVAC Efficiency",
-    description: "HVAC system spray foam to reduce heating/cooling loss in fellowship hall.",
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop" 
-  }
+    description:
+      "Targeted HVAC system spray foam application to reduce massive heating/cooling loss in the main fellowship hall.",
+    image:
+      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop",
+    stats: ["Energy Saved", "Comfort"],
+  },
 ];
 ---
 
-<section class="py-20 lg:py-28 bg-white overflow-hidden" id="projects">
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="flex justify-between items-end mb-12">
-            <div data-aos="fade-right">
-                <span class="text-brand-blue font-bold tracking-wider uppercase text-sm">Our Portfolio</span>
-                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mt-2">Recent Projects</h2>
-            </div>
-        </div>
+<section class="py-24 relative" id="projects">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+      {
+        projects.map((post, i) => (
+          <article
+            class="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col h-full border border-gray-100"
+            data-aos="fade-up"
+            data-aos-delay={i * 100}
+          >
+            <div class="relative overflow-hidden aspect-[4/3]">
+              <div class="absolute inset-0 bg-brand-blue/0 group-hover:bg-brand-blue/20 z-10 transition-colors duration-500" />
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {projects.map((post, i) => (
-                <article 
-                    class="group"
-                    data-aos="fade-up"
-                    data-aos-delay={i * 100}
-                >
-                    <div class="overflow-hidden rounded-xl mb-4 aspect-[4/3] bg-gray-100">
-                        <!-- Placeholder images used above; in real scenario, use actual project photos -->
-                        <!-- Placeholder images used above; in real scenario, use actual project photos -->
-                        {typeof post.image === "string" ? (
-                            <Image 
-                                src={post.image} 
-                                alt={post.title} 
-                                width={800}
-                                height={600}
-                                class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
-                            />
-                        ) : (
-                            <Image 
-                                src={post.image} 
-                                alt={post.title} 
-                                class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
-                            />
-                        )}
-                    </div>
-                    <div class="flex items-center gap-3 text-sm text-gray-500 mb-2">
-                        <span class="text-brand-blue font-bold">{post.category}</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2 leading-tight">
-                        {post.title}
-                    </h3>
-                    <p class="text-gray-600">
-                        {post.description}
-                    </p>
-                </article>
-            ))}
-        </div>
+              {typeof post.image === "string" ? (
+                <Image
+                  src={post.image}
+                  alt={post.title}
+                  width={800}
+                  height={600}
+                  class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                />
+              ) : (
+                <Image
+                  src={post.image}
+                  alt={post.title}
+                  class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                />
+              )}
+
+              <div class="absolute top-4 left-4 z-20">
+                <span class="px-4 py-2 bg-brand-blue/90 backdrop-blur-md text-white md:text-xs text-[10px] font-bold uppercase tracking-wider rounded-full shadow-lg">
+                  {post.category}
+                </span>
+              </div>
+            </div>
+
+            <div class="p-8 flex flex-col flex-grow">
+              <h3 class="text-2xl font-bold text-brand-dark mb-3 group-hover:text-brand-blue transition-colors">
+                {post.title}
+              </h3>
+              <p class="text-gray-600 mb-6 leading-relaxed flex-grow">
+                {post.description}
+              </p>
+
+              <div class="pt-6 border-t border-gray-100 flex flex-wrap gap-2">
+                {post.stats?.map((stat) => (
+                  <span class="px-3 py-1 bg-gray-50 text-gray-500 text-xs font-bold uppercase rounded-lg border border-gray-200">
+                    {stat}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </article>
+        ))
+      }
     </div>
+  </div>
 </section>
